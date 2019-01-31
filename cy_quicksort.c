@@ -2442,8 +2442,8 @@ static PyObject *__pyx_codeobj__44;
  * cimport numpy as np
  * 
  * def quicksort_c(int[:,:,:] arr_f):             # <<<<<<<<<<<<<<
- *     #cdef int[::1, :,:] arr_f = arr.copy_fortran()
- *     #nelem=arr_f.shape[0]*arr_f.shape[1]*arr_f.shape[2]
+ *     cdef int[:,:,:] results = <int[:arr_f.shape[0],:arr_f.shape[1],:arr_f.shape[2]]> quicksort.quick_sort(&arr_f[0,0,0], arr_f.shape[0], arr_f.shape[1], arr_f.shape[2])
+ *     return np.asarray(results)
  */
 
 /* Python wrapper */
@@ -2488,9 +2488,9 @@ static PyObject *__pyx_pf_12cy_quicksort_quicksort_c(CYTHON_UNUSED PyObject *__p
   PyObject *__pyx_t_12 = NULL;
   __Pyx_RefNannySetupContext("quicksort_c", 0);
 
-  /* "cy_quicksort.pyx":8
- *     #cdef int[::1, :,:] arr_f = arr.copy_fortran()
- *     #nelem=arr_f.shape[0]*arr_f.shape[1]*arr_f.shape[2]
+  /* "cy_quicksort.pyx":6
+ * 
+ * def quicksort_c(int[:,:,:] arr_f):
  *     cdef int[:,:,:] results = <int[:arr_f.shape[0],:arr_f.shape[1],:arr_f.shape[2]]> quicksort.quick_sort(&arr_f[0,0,0], arr_f.shape[0], arr_f.shape[1], arr_f.shape[2])             # <<<<<<<<<<<<<<
  *     return np.asarray(results)
  * 
@@ -2513,45 +2513,45 @@ static PyObject *__pyx_pf_12cy_quicksort_quicksort_c(CYTHON_UNUSED PyObject *__p
   } else if (unlikely(__pyx_t_3 >= __pyx_v_arr_f.shape[2])) __pyx_t_4 = 2;
   if (unlikely(__pyx_t_4 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_4);
-    __PYX_ERR(0, 8, __pyx_L1_error)
+    __PYX_ERR(0, 6, __pyx_L1_error)
   }
   __pyx_t_5 = quick_sort((&(*((int *) ( /* dim=2 */ (( /* dim=1 */ (( /* dim=0 */ (__pyx_v_arr_f.data + __pyx_t_1 * __pyx_v_arr_f.strides[0]) ) + __pyx_t_2 * __pyx_v_arr_f.strides[1]) ) + __pyx_t_3 * __pyx_v_arr_f.strides[2]) )))), (__pyx_v_arr_f.shape[0]), (__pyx_v_arr_f.shape[1]), (__pyx_v_arr_f.shape[2]));
-  if (unlikely(!__pyx_v_arr_f.memview)) { __Pyx_RaiseUnboundLocalError("arr_f"); __PYX_ERR(0, 8, __pyx_L1_error) }
-  if (unlikely(!__pyx_v_arr_f.memview)) { __Pyx_RaiseUnboundLocalError("arr_f"); __PYX_ERR(0, 8, __pyx_L1_error) }
-  if (unlikely(!__pyx_v_arr_f.memview)) { __Pyx_RaiseUnboundLocalError("arr_f"); __PYX_ERR(0, 8, __pyx_L1_error) }
+  if (unlikely(!__pyx_v_arr_f.memview)) { __Pyx_RaiseUnboundLocalError("arr_f"); __PYX_ERR(0, 6, __pyx_L1_error) }
+  if (unlikely(!__pyx_v_arr_f.memview)) { __Pyx_RaiseUnboundLocalError("arr_f"); __PYX_ERR(0, 6, __pyx_L1_error) }
+  if (unlikely(!__pyx_v_arr_f.memview)) { __Pyx_RaiseUnboundLocalError("arr_f"); __PYX_ERR(0, 6, __pyx_L1_error) }
   if (!__pyx_t_5) {
     PyErr_SetString(PyExc_ValueError,"Cannot create cython.array from NULL pointer");
-    __PYX_ERR(0, 8, __pyx_L1_error)
+    __PYX_ERR(0, 6, __pyx_L1_error)
   }
   __pyx_t_8 = __pyx_format_from_typeinfo(&__Pyx_TypeInfo_int);
   __pyx_t_7 = Py_BuildValue((char*) "("  __PYX_BUILD_PY_SSIZE_T  __PYX_BUILD_PY_SSIZE_T  __PYX_BUILD_PY_SSIZE_T  ")", ((Py_ssize_t)(__pyx_v_arr_f.shape[0])), ((Py_ssize_t)(__pyx_v_arr_f.shape[1])), ((Py_ssize_t)(__pyx_v_arr_f.shape[2])));
-  if (unlikely(!__pyx_t_8 || !__pyx_t_7 || !PyBytes_AsString(__pyx_t_8))) __PYX_ERR(0, 8, __pyx_L1_error)
+  if (unlikely(!__pyx_t_8 || !__pyx_t_7 || !PyBytes_AsString(__pyx_t_8))) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_6 = __pyx_array_new(__pyx_t_7, sizeof(int), PyBytes_AS_STRING(__pyx_t_8), (char *) "c", (char *) __pyx_t_5);
-  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 8, __pyx_L1_error)
+  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  __pyx_t_9 = __Pyx_PyObject_to_MemoryviewSlice_dsdsds_int(((PyObject *)__pyx_t_6), PyBUF_WRITABLE); if (unlikely(!__pyx_t_9.memview)) __PYX_ERR(0, 8, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_to_MemoryviewSlice_dsdsds_int(((PyObject *)__pyx_t_6), PyBUF_WRITABLE); if (unlikely(!__pyx_t_9.memview)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_DECREF(((PyObject *)__pyx_t_6)); __pyx_t_6 = 0;
   __pyx_v_results = __pyx_t_9;
   __pyx_t_9.memview = NULL;
   __pyx_t_9.data = NULL;
 
-  /* "cy_quicksort.pyx":9
- *     #nelem=arr_f.shape[0]*arr_f.shape[1]*arr_f.shape[2]
+  /* "cy_quicksort.pyx":7
+ * def quicksort_c(int[:,:,:] arr_f):
  *     cdef int[:,:,:] results = <int[:arr_f.shape[0],:arr_f.shape[1],:arr_f.shape[2]]> quicksort.quick_sort(&arr_f[0,0,0], arr_f.shape[0], arr_f.shape[1], arr_f.shape[2])
  *     return np.asarray(results)             # <<<<<<<<<<<<<<
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_asarray); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_asarray); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_v_results, 3, (PyObject *(*)(char *)) __pyx_memview_get_int, (int (*)(char *, PyObject *)) __pyx_memview_set_int, 0);; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_7 = __pyx_memoryview_fromslice(__pyx_v_results, 3, (PyObject *(*)(char *)) __pyx_memview_get_int, (int (*)(char *, PyObject *)) __pyx_memview_set_int, 0);; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_11 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_10))) {
@@ -2564,14 +2564,14 @@ static PyObject *__pyx_pf_12cy_quicksort_quicksort_c(CYTHON_UNUSED PyObject *__p
     }
   }
   if (!__pyx_t_11) {
-    __pyx_t_8 = __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 9, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 7, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_8);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_10)) {
       PyObject *__pyx_temp[2] = {__pyx_t_11, __pyx_t_7};
-      __pyx_t_8 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 9, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 7, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -2580,20 +2580,20 @@ static PyObject *__pyx_pf_12cy_quicksort_quicksort_c(CYTHON_UNUSED PyObject *__p
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_10)) {
       PyObject *__pyx_temp[2] = {__pyx_t_11, __pyx_t_7};
-      __pyx_t_8 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 9, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 7, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     } else
     #endif
     {
-      __pyx_t_12 = PyTuple_New(1+1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 9, __pyx_L1_error)
+      __pyx_t_12 = PyTuple_New(1+1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 7, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_GIVEREF(__pyx_t_11); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_11); __pyx_t_11 = NULL;
       __Pyx_GIVEREF(__pyx_t_7);
       PyTuple_SET_ITEM(__pyx_t_12, 0+1, __pyx_t_7);
       __pyx_t_7 = 0;
-      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 9, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 7, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     }
@@ -2607,8 +2607,8 @@ static PyObject *__pyx_pf_12cy_quicksort_quicksort_c(CYTHON_UNUSED PyObject *__p
  * cimport numpy as np
  * 
  * def quicksort_c(int[:,:,:] arr_f):             # <<<<<<<<<<<<<<
- *     #cdef int[::1, :,:] arr_f = arr.copy_fortran()
- *     #nelem=arr_f.shape[0]*arr_f.shape[1]*arr_f.shape[2]
+ *     cdef int[:,:,:] results = <int[:arr_f.shape[0],:arr_f.shape[1],:arr_f.shape[2]]> quicksort.quick_sort(&arr_f[0,0,0], arr_f.shape[0], arr_f.shape[1], arr_f.shape[2])
+ *     return np.asarray(results)
  */
 
   /* function exit code */
@@ -19522,8 +19522,8 @@ static int __Pyx_InitCachedConstants(void) {
  * cimport numpy as np
  * 
  * def quicksort_c(int[:,:,:] arr_f):             # <<<<<<<<<<<<<<
- *     #cdef int[::1, :,:] arr_f = arr.copy_fortran()
- *     #nelem=arr_f.shape[0]*arr_f.shape[1]*arr_f.shape[2]
+ *     cdef int[:,:,:] results = <int[:arr_f.shape[0],:arr_f.shape[1],:arr_f.shape[2]]> quicksort.quick_sort(&arr_f[0,0,0], arr_f.shape[0], arr_f.shape[1], arr_f.shape[2])
+ *     return np.asarray(results)
  */
   __pyx_tuple__36 = PyTuple_Pack(3, __pyx_n_s_arr_f, __pyx_n_s_arr_f, __pyx_n_s_results); if (unlikely(!__pyx_tuple__36)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__36);
@@ -19931,8 +19931,8 @@ if (!__Pyx_RefNanny) {
  * cimport numpy as np
  * 
  * def quicksort_c(int[:,:,:] arr_f):             # <<<<<<<<<<<<<<
- *     #cdef int[::1, :,:] arr_f = arr.copy_fortran()
- *     #nelem=arr_f.shape[0]*arr_f.shape[1]*arr_f.shape[2]
+ *     cdef int[:,:,:] results = <int[:arr_f.shape[0],:arr_f.shape[1],:arr_f.shape[2]]> quicksort.quick_sort(&arr_f[0,0,0], arr_f.shape[0], arr_f.shape[1], arr_f.shape[2])
+ *     return np.asarray(results)
  */
   __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_12cy_quicksort_1quicksort_c, NULL, __pyx_n_s_cy_quicksort); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
