@@ -2,9 +2,9 @@ from distutils.core import setup
 from Cython.Build import cythonize
 from distutils.extension import Extension
 
-sourcefiles = ['cy_quicksort.pyx', 'quicksort.c']
+sourcefiles = ['drsrop_clib.pyx', 'drsrop.c']
 
-extensions = [Extension("cy_quicksort", sourcefiles)]
+extensions = [Extension("drsrop_clib", sourcefiles)]
 
 setup(
     ext_modules = cythonize(extensions)
