@@ -4,6 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
+SPHINXPROJ    = drsrop_clib
 SOURCEDIR     = source
 BUILDDIR      = build
 
