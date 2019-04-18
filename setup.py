@@ -7,7 +7,7 @@ NAME = "drsrop_clib"
 VERSION = "0.1"
 DESCR = "A small template project that shows how to wrap C/C++ code into python using Cython"
 URL = "http://www.google.com"
-REQUIRES = ['numpy', 'cython','sphinx-astropy']
+REQUIRES = ['numpy', 'cython','astropy-sphinx-theme']
 
 AUTHOR = "Arun Surya"
 EMAIL = "asurya@ucsd.edu"
