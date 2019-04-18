@@ -1,20 +1,28 @@
-.. drsrop_clib documentation master file, created by
-   sphinx-quickstart on Wed Apr 17 15:30:59 2019.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+******************************************************
+IRIS Data Reduction System - Readout Processor C Lib
+******************************************************
 
-Welcome to drsrop_clib's documentation!
-=======================================
+IRIS DRS-ROP package is a wrapper to the C functions for readout processing for the TMT - IRIS Instrument. The main functions implemented in the package are,
+    - Sampling Algorithms
+        - Correlated Double Sampling
+        - Multiple Correlated Double Sampling
+        - Up-The Ramp Sampling
+    - Non-linearity Correction
+
+Getting Started
+===============
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+
+   getting-started
+
+Algorithms
+==========
+
+.. toctree::
+   :maxdepth: 1
+
+   algorithms
 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
