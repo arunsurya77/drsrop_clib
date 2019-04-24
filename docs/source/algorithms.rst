@@ -14,6 +14,11 @@ frame-to-frame noise variation. Individual dark frames are zero
 illumination calibration frames with a shutter or blocking filter to not
 allow any light to hit the detector.
 
+.. image:: stars.png
+    :width: 200px
+    :align: center
+    :height: 200px
+    :alt: alternate text
 ::
 
    # 4096x4096 at 100 seconds exposures, N-frames
